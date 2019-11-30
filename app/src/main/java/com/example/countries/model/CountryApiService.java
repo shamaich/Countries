@@ -13,7 +13,7 @@ public class CountryApiService {
 
     private CountryApi countryApi;
 
-    public CountryApiService(){
+    public CountryApiService() {
         countryApi = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -23,7 +23,7 @@ public class CountryApiService {
     }
 
 
-    public Single<List<Country>> getCountry(String name){
+    public Single<List<Country>> getCountry(String name) {
         return countryApi.getCountry(BASE_URL + "/rest/v2/name/" + name);
     }
 }

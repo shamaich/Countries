@@ -56,10 +56,10 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
     @Override
     public void onCountryClicked(View v) {
         Log.d("onCountryClicked1", "onCountryClicked: ");
-        String uuidString = ((TextView)v.findViewById(R.id.countryName)).getText().toString();
+        String uuidString = ((TextView) v.findViewById(R.id.countryName)).getText().toString();
         Country country = new Country();
-        for (Country c: countryList){
-            if(c.getCountryName().equals(uuidString)){
+        for (Country c : countryList) {
+            if (c.getCountryName().equals(uuidString)) {
                 country = c;
                 break;
             }

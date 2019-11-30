@@ -53,7 +53,7 @@ public class ListFragment extends Fragment implements SearchManager.QueryListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
         ButterKnife.bind(this, view);
         setHasOptionsMenu(true);
         return view;
@@ -81,22 +81,22 @@ public class ListFragment extends Fragment implements SearchManager.QueryListene
 
     private void observeViewModel() {
         viewModel.country.observe(getViewLifecycleOwner(), countries -> {
-            if(countries != null) {
+            if (countries != null) {
                 countryList.setVisibility(View.VISIBLE);
                 countryListAdapter.updateCountryList(countries);
             }
         });
 
         viewModel.countryLoadError.observe(getViewLifecycleOwner(), isError -> {
-            if(isError != null) {
+            if (isError != null) {
                 listError.setVisibility(isError ? View.VISIBLE : View.GONE);
             }
         });
 
         viewModel.loading.observe(getViewLifecycleOwner(), isLoading -> {
-            if(isLoading != null) {
+            if (isLoading != null) {
                 loadingView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-                if(isLoading) {
+                if (isLoading) {
                     listError.setVisibility(View.GONE);
                     countryList.setVisibility(View.GONE);
                 }

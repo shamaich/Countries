@@ -25,12 +25,12 @@ public class Util {
                 .error(R.mipmap.ic_launcher);
 
         GlideApp.with(imageView.getContext())
-                        .setDefaultRequestOptions(options)
-                        .as(PictureDrawable.class)
-                        .transition(withCrossFade())
-                        .listener(new SvgSoftwareLayerSetter())
-                 .load(url)
-                 .into(imageView);
+                .setDefaultRequestOptions(options)
+                .as(PictureDrawable.class)
+                .transition(withCrossFade())
+                .listener(new SvgSoftwareLayerSetter())
+                .load(url)
+                .into(imageView);
 
 
     }

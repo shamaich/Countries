@@ -11,7 +11,7 @@ import com.example.countries.util.converters.ArrayConverter;
 import com.example.countries.util.converters.StringMapConverter;
 
 @Database(entities = {Country.class}, version = 1, exportSchema = false)
-@TypeConverters({ArrayConverter.class,StringMapConverter.class})
+@TypeConverters({ArrayConverter.class, StringMapConverter.class})
 public abstract class CountryDatabase extends RoomDatabase {
 
     private static CountryDatabase instance;
