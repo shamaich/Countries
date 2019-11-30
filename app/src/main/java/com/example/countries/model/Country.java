@@ -1,34 +1,55 @@
 package com.example.countries.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+@Entity
 public class Country implements Serializable {
+    @ColumnInfo(name = "name")
     @SerializedName("name")
     String countryName;
+
+    @ColumnInfo(name = "capital")
     @SerializedName("capital")
     String capital;
+
+    @ColumnInfo(name = "flag")
     @SerializedName("flag")
     String flag;
 
+    @ColumnInfo(name = "callingCodes")
     @SerializedName("callingCodes")
     ArrayList<String> callingCodes;
+
+    @ColumnInfo(name = "region")
     @SerializedName("region")
     String region;
+
+    @ColumnInfo(name = "subregion")
     @SerializedName("subregion")
     String subregion;
 
+    @ColumnInfo(name = "timezones")
     @SerializedName("timezones")
     ArrayList<String> timezones;
+
+    @ColumnInfo(name = "currencies")
     @SerializedName("currencies")
     ArrayList<HashMap<String, String>> currencies;
 
+    @ColumnInfo(name = "languages")
     @SerializedName("languages")
     ArrayList<HashMap<String, String>> languages;
+
+    @PrimaryKey(autoGenerate = true)
+    public int uuid;
 
     public Country() {
     }
