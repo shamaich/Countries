@@ -3,14 +3,12 @@ package com.example.countries.viewmodel;
 import android.app.Application;
 import android.widget.Toast;
 
-import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.countries.model.Country;
 import com.example.countries.model.CountryApiService;
-import com.example.countries.view.MainActivity;
 
 import java.util.List;
 

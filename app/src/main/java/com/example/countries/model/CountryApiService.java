@@ -22,11 +22,7 @@ public class CountryApiService {
                 .create(CountryApi.class);
     }
 
-/*
-    public Single<List<Country>> getCountry(){
-        return countryApi.getCountry();
-    }
-*/
+
     public Single<List<Country>> getCountry(String name){
         return countryApi.getCountry(BASE_URL + "/rest/v2/name/" + name);
     }

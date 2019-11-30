@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -62,6 +63,13 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
             android:text="@{country.subregion}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_detail_country_subRegion"
+            android:id="@+id/fragment_detail_save_button"
+            android:text="SAVE"/>
 
     </RelativeLayout>
 </layout>

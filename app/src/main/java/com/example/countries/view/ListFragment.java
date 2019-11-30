@@ -83,20 +83,20 @@ public class ListFragment extends Fragment implements SearchManager.QueryListene
 
     private void observeViewModel() {
         viewModel.country.observe(getViewLifecycleOwner(), countries -> {
-            if(countries != null && countries instanceof List) {
+            if(countries != null) {
                 countryList.setVisibility(View.VISIBLE);
                 countryListAdapter.updateCountryList(countries);
             }
         });
 
         viewModel.countryLoadError.observe(getViewLifecycleOwner(), isError -> {
-            if(isError != null && isError instanceof Boolean) {
+            if(isError != null) {
                 listError.setVisibility(isError ? View.VISIBLE : View.GONE);
             }
         });
 
         viewModel.loading.observe(getViewLifecycleOwner(), isLoading -> {
-            if(isLoading != null && isLoading instanceof Boolean) {
+            if(isLoading != null) {
                 loadingView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
                 if(isLoading) {
                     listError.setVisibility(View.GONE);
