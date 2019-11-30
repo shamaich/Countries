@@ -2,6 +2,7 @@ package com.example.countries.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
@@ -44,6 +45,7 @@ public class Country implements Serializable {
     @SerializedName("currencies")
     ArrayList<HashMap<String, String>> currencies;
 
+
     @ColumnInfo(name = "languages")
     @SerializedName("languages")
     ArrayList<HashMap<String, String>> languages;
@@ -51,7 +53,8 @@ public class Country implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int uuid;
 
-    public Country() {
+    public @Ignore
+    Country() {
     }
 
     public Country(String countryName, String capital, String flag, ArrayList<String> callingCodes, String region, String subregion, ArrayList<String> timezones, ArrayList<HashMap<String, String>> currencies, ArrayList<HashMap<String, String>> languages) {

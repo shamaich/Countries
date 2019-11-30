@@ -38,6 +38,8 @@ public class ListViewModel extends AndroidViewModel {
     public void fetchCountries(String query) {
 
         if (query == null) {
+            countryLoadError.setValue(false);
+            loading.setValue(false);
             return;
         }
 

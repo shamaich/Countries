@@ -9,7 +9,6 @@ import retrofit2.http.Url;
 public interface CountryApi {
 
     @GET()
-    //Single<List<Country>> getCountry();
     Single<List<Country>> getCountry(@Url String url);
 
 }

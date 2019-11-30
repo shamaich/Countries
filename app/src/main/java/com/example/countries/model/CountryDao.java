@@ -15,5 +15,5 @@ public interface CountryDao {
     Country getCountryList(String query);
 
     @Query("DELETE FROM country WHERE name = :name")
-    Country deleteCountry(String name);
+    void deleteCountry(String name);
 }
