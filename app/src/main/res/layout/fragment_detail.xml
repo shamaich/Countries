@@ -8,10 +8,15 @@
             type="com.example.countries.model.Country" />
     </data>
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".view.DetailFragment">
+
 
         <ImageView
             android:id="@+id/fragment_detail_country_flag_image"
@@ -31,7 +36,7 @@
             android:layout_below="@id/fragment_detail_country_flag_image"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
-            android:text="@{country.countryName}" />
+            android:text="@{`Country: ` + country.countryName}" />
 
         <TextView
             android:id="@+id/fragment_detail_country_capital"
@@ -41,7 +46,7 @@
             android:layout_below="@id/fragment_detail_country_name"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
-            android:text="@{country.capital}" />
+            android:text="@{`Capital: ` + country.capital}" />
 
         <TextView
             android:id="@+id/fragment_detail_country_region"
@@ -51,7 +56,7 @@
             android:layout_below="@id/fragment_detail_country_capital"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
-            android:text="@{country.region}" />
+            android:text="@{`Region: ` + country.region}" />
 
         <TextView
             android:id="@+id/fragment_detail_country_subRegion"
@@ -61,14 +66,43 @@
             android:layout_below="@id/fragment_detail_country_region"
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
-            android:text="@{country.subregion}" />
+            android:text="@{`Subregion: ` + country.subregion}" />
+
+        <TextView
+            android:id="@+id/fragment_detail_country_callingCodes"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_detail_country_subRegion"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"
+            android:text="@{`Calling Code: ` + country.callingCodes.get(0)}" />
+
+        <!--<TextView
+            android:id="@+id/fragment_detail_country_timezones"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_detail_country_subRegion"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"
+            android:text="@{`Timezones: ` + country.timezones.forEach()}" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_detail_layout_callingCodes"
+            android:layout_below="@id/fragment_detail_country_callingCodes"
+            android:orientation="vertical" />
 
         <Button
             android:id="@+id/fragment_detail_save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_detail_country_subRegion"
+            android:layout_below="@id/fragment_detail_layout_callingCodes"
             android:text="@string/fragment_detail_save_for_offline_button" />
 
+
     </RelativeLayout>
+    </ScrollView>
 </layout>
