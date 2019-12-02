@@ -43,8 +43,9 @@ public class ListFragment extends Fragment implements SearchManager.QueryListene
     SwipeRefreshLayout refreshLayout;
 
 
+
     public ListFragment() {
-        // Required empty public constructor
+
         SearchManager.setQueryListener(this);
     }
 
@@ -63,8 +64,7 @@ public class ListFragment extends Fragment implements SearchManager.QueryListene
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(ListViewModel.class);
-        viewModel.refresh();
-
+        viewModel.fetchCountries(null);
         countryList.setLayoutManager(new LinearLayoutManager(getContext()));
         countryList.setAdapter(countryListAdapter);
 
@@ -72,7 +72,7 @@ public class ListFragment extends Fragment implements SearchManager.QueryListene
             countryList.setVisibility(View.GONE);
             listError.setVisibility(View.GONE);
             loadingView.setVisibility(View.VISIBLE);
-
+            onQueryChanged(null);
             refreshLayout.setRefreshing(false);
         });
 

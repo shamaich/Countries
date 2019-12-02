@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="country"
             type="com.example.countries.model.Country" />
     </data>
 
-    <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.DetailFragment">
@@ -65,11 +64,11 @@
             android:text="@{country.subregion}" />
 
         <Button
+            android:id="@+id/fragment_detail_save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_detail_country_subRegion"
-            android:id="@+id/fragment_detail_save_button"
-            android:text="SAVE"/>
+            android:text="@string/fragment_detail_save_for_offline_button" />
 
     </RelativeLayout>
 </layout>
