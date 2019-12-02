@@ -99,36 +99,35 @@ public class DetailFragment extends Fragment {
         TextView textViewTimeZone = new TextView(getContext());
         textViewTimeZone.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT));
-        textViewTimeZone.setPadding(10, 10, 10, 10);
+        textViewTimeZone.setPadding(4, 4, 4, 4);
         textViewTimeZone.setLayoutParams(layoutParams);
         textViewTimeZone.setText(String.format("Timezones: %s", getCountryTimezone));
         linearLayout.addView(textViewTimeZone);
 
         for (HashMap<String, String> x : country.getCurrencies()) {
-            getCountryCurrency.append("\n").append("Name: ").append(x.get("name"));
+            getCountryCurrency.append("Currency: ").append(x.get("name")).append("\n");
         }
 
         TextView textViewCurrency = new TextView(getContext());
         textViewCurrency.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT));
-        textViewCurrency.setPadding(10, 10, 10, 10);
+        textViewCurrency.setPadding(4, 4, 4, 4);
         textViewCurrency.setLayoutParams(layoutParams);
-        textViewCurrency.setText(String.format("Currency:%s", getCountryCurrency));
+        textViewCurrency.setText(getCountryCurrency);
         linearLayout.addView(textViewCurrency);
 
 
         for (HashMap<String, String> x : country.getLanguages()) {
-            getCountryLanguages.append("\n").append("Name: ").append(x.get("name"));
+            getCountryLanguages.append("Language: ").append(x.get("name")).append("\n");
         }
 
         TextView textViewLanguages = new TextView(getContext());
         textViewLanguages.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT));
-        textViewLanguages.setPadding(10, 10, 10, 10);
+        textViewLanguages.setPadding(4, 4, 4, 4);
         textViewLanguages.setLayoutParams(layoutParams);
-        textViewLanguages.setText(String.format("Languages:%s", getCountryLanguages));
+        textViewLanguages.setText(getCountryLanguages);
         linearLayout.addView(textViewLanguages);
-
 
     }
 

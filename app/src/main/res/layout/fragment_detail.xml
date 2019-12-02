@@ -20,6 +20,7 @@
 
         <ImageView
             android:id="@+id/fragment_detail_country_flag_image"
+            android:contentDescription="@string/fragment_detail_country_flag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -77,16 +78,6 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="4dp"
             android:text="@{`Calling Code: ` + country.callingCodes.get(0)}" />
-
-        <!--<TextView
-            android:id="@+id/fragment_detail_country_timezones"
-            style="@style/Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_detail_country_subRegion"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="4dp"
-            android:text="@{`Timezones: ` + country.timezones.forEach()}" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
