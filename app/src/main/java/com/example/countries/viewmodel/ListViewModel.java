@@ -33,6 +33,7 @@ public class ListViewModel extends AndroidViewModel {
     public MutableLiveData<List<Country>> country = new MutableLiveData<>();
     public MutableLiveData<Boolean> countryLoadError = new MutableLiveData<>();
     public MutableLiveData<Boolean> loading = new MutableLiveData<>();
+    public ConnectionLiveData connectionLiveData = new ConnectionLiveData(getApplication());
 
     private CountryApiService countryApiService = new CountryApiService();
     private CompositeDisposable disposable = new CompositeDisposable();
