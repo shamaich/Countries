@@ -24,6 +24,8 @@ import com.example.countries.viewmodel.ListViewModel;
 
 import android.widget.LinearLayout.LayoutParams;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -43,7 +45,7 @@ public class DetailFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         FragmentDetailBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false);
@@ -59,7 +61,6 @@ public class DetailFragment extends Fragment {
         country = DetailFragmentArgs.fromBundle(getArguments()).getCountry();
         binding.setCountry(country);
         listViewModel = ViewModelProviders.of(this).get(ListViewModel.class);
-        ;
         saveCountryButton.setOnClickListener(view1 -> {
             listViewModel.insertCountry(country);
             saveCountryButton.setEnabled(false);
@@ -85,7 +86,7 @@ public class DetailFragment extends Fragment {
     private void initializeLayouts() {
 
         LinearLayout linearLayout = Objects.requireNonNull(getView()).findViewById(R.id.fragment_detail_layout_callingCodes);
-        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
         StringBuilder getCountryTimezone = new StringBuilder();
         StringBuilder getCountryCurrency = new StringBuilder();
