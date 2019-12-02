@@ -1,6 +1,5 @@
 package com.example.countries.view;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +54,6 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
 
     @Override
     public void onCountryClicked(View v) {
-        Log.d("onCountryClicked1", "onCountryClicked: ");
         String uuidString = ((TextView) v.findViewById(R.id.countryName)).getText().toString();
         Country country = new Country();
         for (Country c : countryList) {
@@ -77,8 +75,6 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
         public CountryViewHolder(@NonNull ItemCountryBinding itemView) {
             super(itemView.getRoot());
             this.itemView = itemView;
-            //Country country = itemView.getCountry();
-
         }
     }
 }
