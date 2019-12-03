@@ -57,7 +57,6 @@ public class ListViewModel extends AndroidViewModel {
         if (query == null && isConnected) {
             countryLoadError.setValue(false);
             loading.setValue(false);
-            return;
         }
         else if (!isConnected && query == null) {
             fetchCountriesFromDatabase();
@@ -65,7 +64,7 @@ public class ListViewModel extends AndroidViewModel {
         else if(!isConnected){
             fetchCountriesFromDatabaseWithQuery(query);
         }
-        else if(isConnected) {
+        else {
             fetchCountriesFromEndpoint(query);
         }
 
